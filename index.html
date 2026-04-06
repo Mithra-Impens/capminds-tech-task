@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Appointment Scheduler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>Appointments</h1>
+    <button id="openModalBtn">+ Book Appointment</button>
+  </header>
+
+  <!-- Filters -->
+  <div class="filters">
+    <input type="text" id="searchPatient" placeholder="Search Patient">
+    <input type="text" id="searchDoctor" placeholder="Search Doctor">
+    <input type="date" id="filterDate">
+  </div>
+
+  <!-- Calendar -->
+  <div id="calendarHeader"></div>
+  <div id="calendar"></div>
+
+  <!-- List -->
+  <h2>All Appointments</h2>
+  <div id="appointmentList"></div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+
+    <h2>Schedule Appointment</h2>
+
+    <form id="appointmentForm">
+      <input type="text" id="patientName" placeholder="Patient Name" required>
+      <input type="text" id="doctorName" placeholder="Doctor Name" required>
+      <input type="text" id="hospitalName" placeholder="Hospital Name" required>
+      <input type="text" id="specialty" placeholder="Specialty" required>
+      <input type="date" id="date" required>
+      <input type="time" id="time" required>
+      <textarea id="reason" placeholder="Reason" required></textarea>
+
+      <div class="modal-actions">
+        <button type="submit">Save</button>
+        <button type="button" id="closeModal" class="cancel">Cancel</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
