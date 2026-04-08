@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capminds Appointment Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+
+    <aside class="sidebar" id="sidebar">
+        
+        <nav class="nav-icons">
+            <div class="toggle-sidebar" id="sidebar-toggle"> >> </div>
+        </nav>
+
+            <div class="nav-item active" id="nav-calendar" title="Calendar">
+                <span class="icon"><img src="./icons/calendar.svg" alt="calendar"></span>
+                <span class="nav-text">Calendar</span>
+            </div>
+            <div class="nav-item" id="nav-dashboard" title="Dashboard">
+                <span class="icon"> <img src="./icons/dashboard.svg" alt="dashboard"></span>
+                <span class="nav-text">Dashboard</span>
+            </div>
+           </aside> 
+            
+    <main class="main-content">
+        <header class="top-header">
+            <div class="logo-container">
+            <img src="logo.png" class="logo">
+
+        </div>
+
+
+            <button class="btn-book" id="open-modal">+ Book Appointment</button>
+        </header>
+
+        <section id="view-dashboard" class="view">
+            <div class="content-card">
+                <h2 class="view-title">Practice Dashboard</h2>
+                <div class="filter-bar">
+                    <div class="search-group">
+                        <span class="search-icon"><img src="./icons/search.svg" alt="search"></span>
+                        <input type="text" id="search-patient" placeholder="Patient Search">
+                    </div>
+                    <div class="search-group">
+                        <span class="search-icon"><img src="./icons/search.svg" alt="search"></span>
+                        <input type="text" id="search-doctor" placeholder="Doctor Search">
+                    </div>
+                    <div class="date-range">
+                        <div class="date-input-wrapper">
+                            
+                            <input type="date" id="date-from">
+                        </div>
+                        <div>
+                            <span>-</span>
+                        </div>
+                       
+                        <div class="date-input-wrapper">
+                            
+                            <input type="date" id="date-to">
+                        </div>
+                    </div>
+                    <button class="btn-update">Update</button>
+                </div>
+
+                <div class="table-container">
+                    <h2 class="view-app">Appointment Details</h2>
+                    <table id="appointment-table">
+                        <thead>
+                            <tr>
+                                <th>Patient</th>
+                                <th>Doctor</th>
+                                <th>Hospital</th>
+                                <th>Specialty</th>
+                                <th>Select Date</th>
+                                <th>Select Time</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+         <section id="view-calendar" class="view active-view">
+            <div class="content-card">
+                <div class="calendar-controls">
+
+    <div class="cal-right">
+
+        <button class="nav-btn" id="prev-month">&lt;</button>
+
+        <div class="date-box">
+            <span class="cal-icon"><img src="./icons/calendar.svg" alt="calendar"></span>
+            <span id="current-date-display"></span>
+        </div>
+
+        <button class="nav-btn" id="next-month">&gt;</button>
+
+        <div class="day-indicator" id="day-indicator">
+
+        </div>
+
+        
+        <select id="month-select">
+            <option value="" disabled selected>Month</option>
+            <option value="0">January</option>
+            <option value="1">February</option>
+            <option value="2">March</option>
+            <option value="3">April</option>
+            <option value="4">May</option>
+            <option value="5">June</option>
+            <option value="6">July</option>
+            <option value="7">August</option>
+            <option value="8">September</option>
+            <option value="9">October</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+        </select>
+
+    </div>
+</div>
+
+               
+                <div class="doctor-strip">James Marry</div>
+                <div class="calendar-grid" id="calendar-days">
+                    <div class="day-header">SUNDAY</div>
+                    <div class="day-header">MONDAY</div>
+                    <div class="day-header">TUESDAY</div>
+                    <div class="day-header">WEDNESDAY</div>
+                    <div class="day-header">THURSDAY</div>
+                    <div class="day-header">FRIDAY</div>
+                    <div class="day-header">SATURDAY</div>
+                    
+                </div>
+            </div>
+        </section> 
+    </main>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h4>Schedule Appointment</h4>
+                <span class="close-modal" id="close-modal">&times;</span>
+            </div>
+            <form id="appointment-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <div class="input-with-icon">
+        <img src="./icons/user.svg" class="field-icon">
+                        <select id="patientName" required>
+                            <option value="" disabled selected hidden>Patient Name</option>
+                            <option value="Henry James">Henry James</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                       <div class="input-with-icon"><img src="./icons/user.svg" class="field-icon">
+                        <select id="doctorName" required>
+                            <option value="" disabled selected hidden>Doctor Name</option>
+                            <option value="James Marry">James Marry</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <img src="./icons/hospital.svg" class="field-icon">
+                            
+                        <select id="hospitalName" required>
+                           <option value="" disabled selected hidden>Hospital Name</option>
+                            <option value="Salus Center">Salus Center</option>
+                            <option value="Ultracare">Ultracare</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <img src="./icons/doctor.svg" class="field-icon">
+                        <select id="specialty" required>
+                            <option value="" disabled selected hidden>Specialty</option>
+                            <option value="Dermatology">Dermatology</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <img src="./icons/calendar.svg" class="field-icon">
+                            <input type="date" id="apptDate" required>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <img src="./icons/time.svg" class="field-icon">
+                        <input type="time" id="apptTime" required>
+                    </div>
+                    </div> 
+
+
+
+                    <div class="form-group full-width">
+                        <label>Reason</label>
+                        <textarea id="reason" rows="2"></textarea>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" id="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn-save">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
