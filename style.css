@@ -189,6 +189,7 @@ margin-top: 12px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    overflow-y: auto;
 
 }
 
@@ -614,8 +615,8 @@ padding-top: 15px;
 .appt-pill {
     background: #28a745;
     color: white;
-    font-size: 10px;
-    padding: 6px;
+    font-size: 8px;
+    padding: 2px;
     border-radius: 6px;
     margin-bottom: 4px;
 }
@@ -689,6 +690,7 @@ padding-top: 15px;
 
     .main-content {
         margin-left: 0;
+        width: 100%;
     }
     .filter-bar {
         flex-wrap: wrap;
@@ -708,16 +710,23 @@ padding-top: 15px;
     .btn-update {
         width: 100%;
     }
-    .calendar-grid {
-        grid-template-columns: repeat(2, 1fr); 
-    }
+   
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); 
+}
+
+
+
 
     .day-header {
-        display: none; 
+        font-size: 10px;
+    padding: 6px;
     }
 
     .day-cell {
-        min-height: 80px;
+        min-height: 60px;
+        padding: 2px;
     }
 .cal-right {
         flex-wrap: wrap;
@@ -737,6 +746,35 @@ padding-top: 15px;
     .top-header .logo {
         height: 28px;
     }
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day-header {
+    font-size: 10px;
+    padding: 6px;
+    text-align: center;
+}
+
+.day-cell {
+    min-height: 60px;
+    padding: 2px;
+}
+
+.appt-pill {
+    font-size: 8px;
+    padding: 2px;
+}
+
+.main-content {
+    margin-left: 0;
+    width: 100%;
+}
+
+
+
+
 
 }
 
