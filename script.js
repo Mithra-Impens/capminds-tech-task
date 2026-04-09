@@ -158,8 +158,14 @@ function renderTable() {
 
 
                 <td>
-                    <span class="action-btn edit" onclick="editAppt(${i})"><img src="icons/edit.svg"></span>
-                    <span class="action-btn delete" onclick="deleteAppt(${i})"><img src="icons/delete.svg"></span>
+                    <span class="action-btn edit" onclick="editAppt(${i})"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.25 16.25H18.75V17.5H1.25V16.25ZM15.875 5.625C16.375 5.125 16.375 4.375 15.875 3.875L13.625 1.625C13.125 1.125 12.375 1.125 11.875 1.625L2.5 11V15H6.5L15.875 5.625ZM12.75 2.5L15 4.75L13.125 6.625L10.875 4.375L12.75 2.5ZM3.75 13.75V11.5L10 5.25L12.25 7.5L6 13.75H3.75Z" fill="#2C7BE5"/>
+</svg>
+
+                    <span class="action-btn delete" onclick="deleteAppt(${i})"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 21C6.45 21 5.979 20.804 5.587 20.412C5.195 20.02 4.99933 19.5493 5 19V6H4V4H9V3H15V4H20V6H19V19C19 19.55 18.804 20.021 18.412 20.413C18.02 20.805 17.5493 21.0007 17 21H7ZM17 6H7V19H17V6ZM9 17H11V8H9V17ZM13 17H15V8H13V17Z" fill="#E23D28"/>
+</svg>
+</span>
                 </td>
             </tr>
         `);
@@ -257,8 +263,14 @@ let apptHtml = dayAppts.map((a, i) => `
         <div class="appt-top">
             <span>${a.patient} | ${formatTimeTo12Hr(a.time)}</span>
             <div class="appt-actions">
-                <img src="icons/edit.svg" onclick="editAppt(${appointments.indexOf(a)}); event.stopPropagation();">
-                <img src="icons/delete.svg" onclick="deleteAppt(${appointments.indexOf(a)}); event.stopPropagation();">
+                <<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.25 16.25H18.75V17.5H1.25V16.25ZM15.875 5.625C16.375 5.125 16.375 4.375 15.875 3.875L13.625 1.625C13.125 1.125 12.375 1.125 11.875 1.625L2.5 11V15H6.5L15.875 5.625ZM12.75 2.5L15 4.75L13.125 6.625L10.875 4.375L12.75 2.5ZM3.75 13.75V11.5L10 5.25L12.25 7.5L6 13.75H3.75Z" fill="#2C7BE5"/>
+
+ onclick="editAppt(${appointments.indexOf(a)}); event.stopPropagation();"></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 21C6.45 21 5.979 20.804 5.587 20.412C5.195 20.02 4.99933 19.5493 5 19V6H4V4H9V3H15V4H20V6H19V19C19 19.55 18.804 20.021 18.412 20.413C18.02 20.805 17.5493 21.0007 17 21H7ZM17 6H7V19H17V6ZM9 17H11V8H9V17ZM13 17H15V8H13V17Z" fill="#E23D28"/>
+
+ onclick="deleteAppt(${appointments.indexOf(a)}); event.stopPropagation();"></svg>
             </div>
         </div>
     </div>
